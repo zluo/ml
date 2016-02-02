@@ -13,7 +13,7 @@ def plot_features(m):
     i = 0
     while i < len :
        li = premature(i, len, m)
-       plot_scatter(li)
+       plot_scatter(i , li)
        i += 1
             
 def premature(i, len, m): 
@@ -24,10 +24,14 @@ def premature(i, len, m):
         j += 1
     return li
 
-def plot_scatter(li):
+def plot_scatter(index, li):
+        i=index + 1
         for tup in li:
-            plt.scatter(tup[0], tup[1])
-            plt.show()
+            #plt.scatter(tup[0], tup[1])
+            plt.plot(tup[0], tup[1], label = 'F(' + str(index) +  ',' + str(i) + ')')
+            i += 1
+        plt.legend()
+        plt.show()
         
         
            

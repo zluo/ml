@@ -15,10 +15,15 @@ from mylib.plots import plot_features as pf
 class TestPlot(unittest.TestCase): 
     
     def test_pf(self):
-        a = np.random.rand(100)
+       # a = np.random.rand(100)
+        a = np.arange(0, 1, 0.01)
         b = np.sqrt(1 - a*a)  # a*a + b*b =1
-        c = np.vstack((a, b))
-        pf(c)
+        c = a*a  # a*a + b*b =1
+        d = a*b
+        e =d*c
+        z = np.vstack((a, b, c, d, e))
+        
+        pf(z)
 
 if __name__ == '__main__':
     unittest.main()
