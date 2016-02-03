@@ -10,8 +10,8 @@ need to understand py deploy
 '''
 import unittest
 import numpy as np
-from mylib.plots import plot_features as pf
-from mylib.plots import scatter_features as sf
+from mylib.plots import *
+from mylib.plots import _plot
 
 class TestPlot(unittest.TestCase): 
     
@@ -26,8 +26,10 @@ class TestPlot(unittest.TestCase):
         g= a + b + c + d + e + f
         z = np.vstack((a, b, c, d, e, f, g))
         
-       # pf(z)
-        sf(z)
-
+        #pf(z)
+        #scatter_features(z)
+        _plot(a, c/b)
+        
+        
 if __name__ == '__main__':
     unittest.main()
