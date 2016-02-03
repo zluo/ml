@@ -29,6 +29,7 @@ class TestPlot(unittest.TestCase):
         #pf(z)
         #scatter_features(z)
         _plot(a, c/b)
+        _plot(a, a/b)
         
         
 if __name__ == '__main__':
