@@ -7,14 +7,22 @@ import matplotlib.pyplot as plt
 '''
   m is a nynum array[[],[],[]]
 '''
+def scatter_features(m): 
+    print('-----------scatter features----------')
+    execute(_scatter, m)
+
 def plot_features(m): 
-    print('-----------print features----------')
+    print('-----------plot features----------')
+    execute(_plot, m)
+
+def execute(func, m):
     len = m.shape[0]
     i = 0
     while i < len :
        li = premature(i, len, m)
-       plot_scatter(i , li)
+       func(i , li)
        i += 1
+    
             
 def premature(i, len, m): 
     li =[]
@@ -24,10 +32,19 @@ def premature(i, len, m):
         j += 1
     return li
 
-def plot_scatter(index, li):
+def _scatter(index, li):
+        mk =['d','+', 'o', 'x', '^','>','<', 's','p','h','8','+','x']
+        colors = ['r','b','g','c','m','y','k']
         i=index + 1
         for tup in li:
-            #plt.scatter(tup[0], tup[1])
+            plt.scatter(tup[0], tup[1], color=colors[i%len(colors)], marker=mk[i% len(mk)], label = 'F(' + str(index) +  ',' + str(i) + ')')
+            i += 1
+        plt.legend()
+        plt.show()
+        
+def _plot(index, li):
+        i=index + 1
+        for tup in li:
             plt.plot(tup[0], tup[1], label = 'F(' + str(index) +  ',' + str(i) + ')')
             i += 1
         plt.legend()

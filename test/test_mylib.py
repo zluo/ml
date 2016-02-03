@@ -11,6 +11,7 @@ need to understand py deploy
 import unittest
 import numpy as np
 from mylib.plots import plot_features as pf
+from mylib.plots import scatter_features as sf
 
 class TestPlot(unittest.TestCase): 
     
@@ -21,9 +22,12 @@ class TestPlot(unittest.TestCase):
         c = a*a  # a*a + b*b =1
         d = a*b
         e =d*c
-        z = np.vstack((a, b, c, d, e))
+        f=2*e
+        g= a + b + c + d + e + f
+        z = np.vstack((a, b, c, d, e, f, g))
         
-        pf(z)
+       # pf(z)
+        sf(z)
 
 if __name__ == '__main__':
     unittest.main()
